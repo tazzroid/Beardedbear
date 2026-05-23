@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 :root{
   --bg: #0b0b0b;
   --text: #ffffff;
@@ -19,6 +21,11 @@ body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+h1, h2, .logo {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em; 
+}
 .site-header{
   position: sticky;
   top: 0;
@@ -229,18 +236,24 @@ body{
   color: rgba(255,255,255,0.74);
 }
 
-.hero-actions{
-  display: flex;
-  gap: 14px;
-  margin-top: 26px;
-  align-items: center;
+
+
+
+.hero-small {
+  font-size: 0.5em; /* Half the size of the h1 */
+  color: var(--muted); /* Uses your soft gray/white variable */
+  font-family: 'Archivo Black', sans-serif; /* Back to a cleaner, non-black font */
+  text-transform: uppercase; /* Keeps it normal case, looks more modern */  
+  font-weight: 600; /* Makes it thinner than the bold rotating word */
 }
 
-.hero-rotate{
-  position: relative;
-  display: inline-block;
-  min-width: 7ch;
+
+.rotate-word.is-visible {
+  position: relative; /* Only takes space when visible */
+  opacity: 1;
+  transform: translateY(0);
 }
+
 .meta-rotate{
   position: relative;
   display: inline-block;
@@ -266,23 +279,36 @@ body{
 }
 
 
-.rotate-word{
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 350ms ease, transform 350ms ease;
-  color: var(--accent);
+/* 1. The Container: Create the "Shelf" */
+.hero-rotate {
+  display: inline-block;
+  position: relative;
+  min-width: 300px; /* Force it to stay wide */
+  height: 1.6em;    /* This height locks the gap vertically */
+  vertical-align: bottom; /* Aligns it perfectly with the sentence */
 }
 
-.rotate-word.is-visible{
-  position: relative;
+/* 2. The Words: Keep them in the "Shelf" */
+.rotate-word {
+  position: absolute; /* Keep them stacked on each other */
+  top: 0;
+  left: 0;
+  width: 100%; /* Fill the shelf */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease; /* Smooth fade and move */
+  color: var(--accent);
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.5em; /* Scale the word up */
+  text-transform: uppercase;
+}
+
+/* 3. The Active Word: Only change visibility, not position */
+.rotate-word.is-visible {
   opacity: 1;
   transform: translateY(0);
+  position: relative; /* This pulls it into the shelf flow */
 }
-
-
 .ghost{
   text-decoration: none;
   color: var(--text);
