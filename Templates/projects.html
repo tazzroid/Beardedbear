@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="profile">
+  <div class="profile-left">
+    <img class="avatar" src="{{ url_for('static', filename='images/profile/profile.jpg') }}" alt="{{ profile.name }}">
+  </div>
+
+  <div class="profile-right">
+    <h1 class="profile-name">{{ profile.name }}</h1>
+    <div class="profile-title muted">{{ profile.title }}</div>
+
+    <p class="profile-bio">{{ profile.bio }}</p>
+
+    <div class="profile-meta muted">
+      <span class="dot"></span> {{ profile.location }}
+    </div>
+
+    {% if profile.links %}
+    <div class="profile-links">
+      {% for l in profile.links %}
+        <a class="plink" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<div class="projects-head">
+  <h2 class="section-title" style="margin:0;">Projects</h2>
+  <p class="muted" style="margin:6px 0 0;">Case studies and selected work.</p>
+</div>
+
+<div class="projects-grid">
+  {% for p in projects %}
+  <a class="project-card" href="/project/{{ p.slug }}">
+    <div class="project-cover">
+      <img src="{{ url_for('static', filename='images/' + p.cover) }}" alt="{{ p.title }}">
+    </div>
+
+    <div class="project-meta">
+      <div class="project-title">{{ p.title }}</div>
+
+      <div class="project-sub">
+        {{ p.fields | join(" • ") }} {% if p.year %} • {{ p.year }}{% endif %}
+      </div>
+
+      {% if p.tags %}
+      <div class="chips">
+        {% for t in p.tags[:5] %}
+          <span class="chip">#{{ t }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+{% endblock %}

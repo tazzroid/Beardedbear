@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Aether Brand Identity",
+        "slug": "aether-brand-identity",
+        "category": "Branding",
+        "thumbnail": "aether_thumb.jpg",
+        "description": "A high-end visual identity for a minimalist luxury streetwear label based in Auckland. Heavy use of brutalist typography and monochromatic color palettes.",
+        "tags": ["Branding", "Typography", "Packaging"],
+        "year": "2025"
+    },
+    {
+        "title": "Vanguard Social Kit",
+        "slug": "vanguard-social-kit",
+        "category": "Social Media",
+        "thumbnail": "vanguard_thumb.jpg",
+        "description": "Complete social media suite and launch assets for an e-sports collective. Designed to maximize contrast and screen presence on mobile feeds.",
+        "tags": ["Social Media", "Motion Graphics", "Gaming"],
+        "year": "2025"
+    },
+    {
+        "title": "Nocturnal Vinyl Record",
+        "slug": "nocturnal-vinyl-record",
+        "category": "Print & Packaging",
+        "thumbnail": "nocturnal_thumb.jpg",
+        "description": "Album artwork and gatefold sleeve design for a local synthwave artist. Features custom spot UV print finishes and stark geometric patterns.",
+        "tags": ["Print", "Packaging", "Illustration"],
+        "year": "2024"
+    }
+]

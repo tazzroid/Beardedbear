@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BeardedBear</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Left: Logo -->
+      <a class="brand" href="/">
+        <img class="brand-mark" src="{{ url_for('static', filename='img/bear-icon.png') }}" alt="BeardedBear">
+        <span class="brand-name">BEARDEDBEAR</span>
+      </a>
+
+      <!-- Center: Nav -->
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+  <a href="#home">Home</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#burrow">Burrow</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+
+      <!-- Right: Icons + CTA -->
+      <div class="header-actions">
+        <a class="icon-btn" href="tel:+64000000000" aria-label="Call">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C11.1 22 2 12.9 2 1c0-.6.4-1 1-1h3.8c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.5 2.9z"/>
+          </svg>
+        </a>
+
+        <a class="icon-btn" href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.8 6.2a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/>
+          </svg>
+        </a>
+
+      
+
+        <!-- Mobile menu button -->
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-controls="primaryNav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="page">
+ <section id="home" class="hero">
+  <div class="hero-grid">
+
+    <div class="hero-copy">
+      <p class="hero-kicker reveal">Hi, I am BeardedBear</p>
+
+      <h1 class="hero-title reveal reveal-delay-1">
+        I design
+        <span class="hero-rotate">
+          <span class="rotate-word is-visible">brands</span>
+          <span class="rotate-word">websites</span>
+          <span class="rotate-word">content</span>
+          <span class="rotate-word">packaging</span>
+          <span class="rotate-word">apparel</span>
+        </span>
+        people remember.
+      </h1>
+
+      <p class="hero-sub reveal reveal-delay-2">
+        I help businesses stand out with sharp identity design, clean websites, and print media that feels premium.
+        <br>Designed in New Zealand. Delivered everywhere.
+      </p>
+
+      <div class="hero-actions reveal reveal-delay-3">
+       
+        <a class="ghost" href="#portfolio">VIEW WORK</a>
+      </div>
+
+      <div class="hero-meta reveal reveal-delay-4">
+        <div class="meta-inline">
+          <img
+            src="{{ url_for('static', filename='img/kiwi.png') }}"
+            alt="New Zealand fern"
+            class="meta-icon"
+          />
+          <span class="meta-text">
+            Based in
+            <span class="meta-rotate">
+              <span class="meta-word is-visible">Auckland, New Zealand</span>
+              <span class="meta-word">Auckland, Aotearoa</span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art reveal reveal-delay-2">
+      <img
+        src="{{ url_for('static', filename='img/bear-mascot.gif') }}"
+        alt="BeardedBear mascot"
+        class="hero-mascot"
+      />
+    </div>
+
+  </div>
+</section>
+</main>
+
+
+
+<section id="portfolio" class="portfolio">
+  <div class="section-inner">
+
+    <div class="section-head">
+      <h2 class="section-title">Portfolio</h2>
+      <p class="section-sub">
+        A few selected projects. Branding, social, print, and web.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <a class="work-card" href="#" aria-label="Open project 1">
+        <div class="work-thumb">
+          <img src="{{ url_for('static', filename='img/portfolio/01.jpg') }}" alt="Project 1">
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Project Name One</div>
+          <div class="work-tags">Branding • Social</div>
+        </div>
+      </a>
+
+      <a class="work-card" href="#" aria-label="Open project 2">
+        <div class="work-thumb">
+           <img src="{{ url_for('static', filename='img/portfolio/01.jpg') }}" alt="Project 2">
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Project Name Two</div>
+          <div class="work-tags">Packaging • Print</div>
+        </div>
+      </a>
+
+      <a class="work-card" href="#" aria-label="Open project 3">
+        <div class="work-thumb">
+           <img src="{{ url_for('static', filename='img/portfolio/01.jpg') }}" alt="Project 3">
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Project Name Three</div>
+          <div class="work-tags">Web • UI</div>
+        </div>
+      </a>
+
+      <a class="work-card" href="#" aria-label="Open project 4">
+        <div class="work-thumb">
+           <img src="{{ url_for('static', filename='img/portfolio/01.jpg') }}" alt="Project 4">
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Project Name Four</div>
+          <div class="work-tags">Identity • Print</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="portfolio-cta">
+      <a class="ghost" href="#contact">GET IN TOUCH</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-social">
+      <ul>
+       
+
+        <li>
+          <a href="https://www.facebook.com/lazrdesign" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.7 10 9.9V12H8v3h2v6h3v-6h2.3l.7-3H13V9.9c0-.5.2-.9.5-.9z"/>
+</svg>
+
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/lazr.design" target="_blank" aria-label="Instagram">
+           <svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.7 10 9.9V12H8v3h2v6h3v-6h2.3l.7-3H13V9.9c0-.5.2-.9.5-.9z"/>
+</svg>
+
+          </a>
+        </li>
+
+        
+        <li>
+          <a href="https://www.instagram.com/lazr.design" target="_blank" aria-label="Instagram">
+           <svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.7 10 9.9V12H8v3h2v6h3v-6h2.3l.7-3H13V9.9c0-.5.2-.9.5-.9z"/>
+</svg>
+
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-text">
+      BeardedBear © All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

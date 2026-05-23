@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="/projects" class="back">← Projects</a>
+
+<header class="case-header">
+  <h1 class="case-title">{{ project.title }}</h1>
+  <div class="case-sub muted">
+    {{ project.fields | join(" • ") }} {% if project.year %} • {{ project.year }}{% endif %}
+  </div>
+
+  {% if project.tools %}
+  <div class="case-tools muted">Tools: {{ project.tools | join(", ") }}</div>
+  {% endif %}
+
+  {% if project.intro %}
+  <p class="case-intro">{{ project.intro }}</p>
+  {% endif %}
+</header>
+
+<div class="case-body">
+  {% for b in project.blocks %}
+    {% if b.type == "text" %}
+      <section class="block block-text">
+        {% if b.heading %}<h2>{{ b.heading }}</h2>{% endif %}
+        <p>{{ b.body }}</p>
+      </section>
+
+    {% elif b.type == "image" %}
+      <section class="block block-image">
+        <img src="{{ url_for('static', filename='images/' + b.src) }}" alt="">
+        {% if b.caption %}<div class="caption muted">{{ b.caption }}</div>{% endif %}
+      </section>
+
+    {% elif b.type == "gallery" %}
+      <section class="block block-gallery">
+        <div class="gallery cols-{{ b.columns if b.columns else 2 }}">
+          {% for g in b.images %}
+            <figure class="gitem">
+              <img src="{{ url_for('static', filename='images/' + g.src) }}" alt="">
+              {% if g.caption %}<figcaption class="caption muted">{{ g.caption }}</figcaption>{% endif %}
+            </figure>
+          {% endfor %}
+        </div>
+      </section>
+
+    {% elif b.type == "embed" %}
+      <section class="block block-embed">
+        {% if b.heading %}<h2>{{ b.heading }}</h2>{% endif %}
+        <div class="embed-wrap">
+          {{ b.iframe | safe }}
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}
